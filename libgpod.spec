@@ -1,7 +1,7 @@
 %define name libgpod
-%define version 0.4.2
-%define release %mkrel 2
-%define major 1
+%define version 0.5.0
+%define release %mkrel 1
+%define major 2
 %define libname %mklibname gpod %major
 
 Summary: Library to access an iPod audio player
@@ -49,10 +49,10 @@ stored on an iPod, to modify them and to save them back to the iPod.
 %package -n python-gpod
 Group: Development/Python
 Summary: Python module for iPod access
-Requires: python-eyed3
 BuildRequires: python-devel 
-BuildRequires: python-eyed3
+BuildRequires: mutagen
 BuildRequires: swig
+Requires: mutagen
 
 %description -n python-gpod
 libgpod is a library meant to abstract access to an iPod content. It
