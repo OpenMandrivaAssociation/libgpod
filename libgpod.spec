@@ -1,8 +1,9 @@
 %define name libgpod
-%define version 0.5.0
+%define version 0.5.2
 %define release %mkrel 1
 %define major 2
 %define libname %mklibname gpod %major
+%define libnamedev %mklibname -d gpod %major
 
 Summary: Library to access an iPod audio player
 Name: %{name}
@@ -35,13 +36,13 @@ libgpod is a library meant to abstract access to an iPod content. It
 provides an easy to use API to retrieve the list of files and playlist
 stored on an iPod, to modify them and to save them back to the iPod.
 
-%package -n %libname-devel
+%package -n %libnamedev
 Group: Development/C
 Summary: Library to access an iPod audio player
 Requires: %libname = %version
 Provides: %name-devel = %version-%release
 
-%description -n %libname-devel
+%description -n %libnamedev
 libgpod is a library meant to abstract access to an iPod content. It
 provides an easy to use API to retrieve the list of files and playlist
 stored on an iPod, to modify them and to save them back to the iPod.
@@ -86,7 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %_libdir/lib*.so.%{major}*
 
-%files -n %libname-devel
+%files -n %libnamedev
 %defattr(-,root,root)
 %_libdir/lib*.so
 %attr(644,root,root)  %_libdir/lib*a
