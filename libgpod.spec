@@ -50,6 +50,7 @@ stored on an iPod, to modify them and to save them back to the iPod.
 %package -n python-gpod
 Group: Development/Python
 Summary: Python module for iPod access
+BuildRequires: python-gobject-devel
 BuildRequires: python-devel 
 BuildRequires: mutagen
 BuildRequires: swig
