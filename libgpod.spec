@@ -16,6 +16,7 @@ Url: http://www.gtkpod.org/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: gtk+2-devel
 BuildRequires: hal-devel dbus-glib-devel
+BuildRequires: libsgutils-devel
 BuildRequires: taglib-devel
 BuildRequires: eject
 BuildRequires: perl-XML-Parser
