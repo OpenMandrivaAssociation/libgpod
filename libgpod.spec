@@ -1,7 +1,7 @@
 %define name libgpod
-%define version 0.5.2
+%define version 0.6.0
 %define release %mkrel 1
-%define major 2
+%define major 3
 %define libname %mklibname gpod %major
 %define libnamedev %mklibname -d gpod %major
 
@@ -9,7 +9,7 @@ Summary: Library to access an iPod audio player
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: http://prdownloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.bz2
+Source0: http://prdownloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
 License: LGPL
 Group: System/Libraries
 Url: http://www.gtkpod.org/
@@ -82,6 +82,9 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %name.lang
 %defattr(-,root,root)
 %doc README AUTHORS ChangeLog
+%_libdir/hal/libgpod-callout
+%_bindir/ipod-read-sysinfo-extended
+%_datadir/hal/fdi/policy/20thirdparty/*
 
 %files -n %libname
 %defattr(-,root,root)
