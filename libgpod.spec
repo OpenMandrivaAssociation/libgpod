@@ -1,9 +1,9 @@
 %define name libgpod
 %define version 0.6.0
-%define release %mkrel 1
+%define release %mkrel 2
 %define major 3
 %define libname %mklibname gpod %major
-%define libnamedev %mklibname -d gpod %major
+%define libnamedev %mklibname -d gpod
 
 Summary: Library to access an iPod audio player
 Name: %{name}
@@ -42,6 +42,7 @@ Group: Development/C
 Summary: Library to access an iPod audio player
 Requires: %libname = %version
 Provides: %name-devel = %version-%release
+Obsoletes: %mklibname -d gpod 2
 
 %description -n %libnamedev
 libgpod is a library meant to abstract access to an iPod content. It
