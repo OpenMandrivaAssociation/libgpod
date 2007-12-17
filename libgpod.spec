@@ -13,7 +13,6 @@ Source0: http://prdownloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
 License: LGPL
 Group: System/Libraries
 Url: http://www.gtkpod.org/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: gtk+2-devel
 BuildRequires: hal-devel dbus-glib-devel
 BuildRequires: libsgutils-devel
