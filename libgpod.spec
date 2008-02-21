@@ -1,6 +1,6 @@
 %define name libgpod
 %define version 0.6.0
-%define release %mkrel 2
+%define release %mkrel 3
 %define major 3
 %define libname %mklibname gpod %major
 %define libnamedev %mklibname -d gpod
@@ -76,6 +76,9 @@ This is a Python binding for libgpod.
 rm -rf $RPM_BUILD_ROOT %name.lang
 %makeinstall_std
 %find_lang %name
+mkdir -p %buildroot%_libdir/hal/scripts/
+mv %buildroot%_libdir/hal/libgpod-callout %buildroot%_libdir/hal/scripts/
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -85,7 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %name.lang
 %defattr(-,root,root)
 %doc README AUTHORS ChangeLog
-%_libdir/hal/libgpod-callout
+%_libdir/hal/scripts/libgpod-callout
 %_bindir/ipod-read-sysinfo-extended
 %_datadir/hal/fdi/policy/20thirdparty/*
 
