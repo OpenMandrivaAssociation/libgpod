@@ -1,6 +1,6 @@
 %define name libgpod
 %define version 0.6.0
-%define release %mkrel 3
+%define release %mkrel 4
 %define major 3
 %define libname %mklibname gpod %major
 %define libnamedev %mklibname -d gpod
@@ -10,6 +10,13 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://prdownloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
+# gw these patches are all from svn and are taken from the Fedora package
+# fix function to remove photos
+Patch0: libgpod-0.6.0-photoremove.patch
+# fix iPod Touch in the model list
+Patch1: libgpod-0.6.0-ipod-touch-typos.patch
+# fix track length bug in smart playlists
+Patch2: libgpod-0.6.0-spl-tracklen.patch
 License: LGPL
 Group: System/Libraries
 Url: http://www.gtkpod.org/
@@ -67,6 +74,9 @@ This is a Python binding for libgpod.
 
 %prep
 %setup -q
+%patch0 -p0 -b .photoremove
+%patch1 -p0 -b .ipod-touch-typos
+%patch2 -p0 -b .spl-tracklen
 
 %build
 %configure2_5x
