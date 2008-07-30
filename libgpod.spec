@@ -18,6 +18,7 @@ Patch1: libgpod-0.6.0-ipod-touch-typos.patch
 # fix track length bug in smart playlists
 Patch2: libgpod-0.6.0-spl-tracklen.patch
 Patch3: libgpod-0.6.0-missing-header.patch
+Patch4: libgpod-0.6.0-sgutils2.patch
 License: LGPLv2+
 Group: System/Libraries
 Url: http://www.gtkpod.org/
@@ -79,6 +80,10 @@ This is a Python binding for libgpod.
 %patch1 -p0 -b .ipod-touch-typos
 %patch2 -p0 -b .spl-tracklen
 %patch3 -p1
+%patch4 -p1
+aclocal -I m4
+autoconf
+automake
 
 %build
 %configure2_5x
