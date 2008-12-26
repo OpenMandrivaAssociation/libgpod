@@ -1,6 +1,6 @@
 %define name libgpod
 %define version 0.6.0
-%define release %mkrel 5
+%define release %mkrel 6
 %define major 3
 %define libname %mklibname gpod %major
 %define libnamedev %mklibname -d gpod
@@ -62,7 +62,7 @@ stored on an iPod, to modify them and to save them back to the iPod.
 Group: Development/Python
 Summary: Python module for iPod access
 BuildRequires: python-gobject-devel
-BuildRequires: python-devel 
+%py_requires -d
 BuildRequires: mutagen
 BuildRequires: swig
 Requires: mutagen
