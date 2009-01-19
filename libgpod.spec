@@ -18,6 +18,7 @@ BuildRequires: gtk+2-devel
 BuildRequires: hal-devel dbus-glib-devel
 BuildRequires: libsgutils-devel
 BuildRequires: taglib-devel
+BuildRequires: gtk-doc
 BuildRequires: eject
 BuildRequires: intltool
 
