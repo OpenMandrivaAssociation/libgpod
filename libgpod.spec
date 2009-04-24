@@ -1,5 +1,5 @@
 %define name libgpod
-%define version 0.7.0
+%define version 0.7.2
 %define release %mkrel 1
 %define major 4
 %define libname %mklibname gpod %major
@@ -78,8 +78,6 @@ This is a Python binding for libgpod.
 rm -rf $RPM_BUILD_ROOT %name.lang
 %makeinstall_std
 %find_lang %name
-mkdir -p %buildroot%_libdir/hal/scripts/
-mv %buildroot%_libdir/hal/libgpod-callout %buildroot%_libdir/hal/scripts/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
