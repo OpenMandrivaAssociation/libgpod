@@ -10,6 +10,7 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://prdownloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
+Patch0: libgpod-0.7.2-fix-nano4g-black-8GB-serial.patch
 License: LGPLv2+
 Group: System/Libraries
 Url: http://www.gtkpod.org/
@@ -69,6 +70,7 @@ This is a Python binding for libgpod.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure2_5x --enable-gtk-doc
