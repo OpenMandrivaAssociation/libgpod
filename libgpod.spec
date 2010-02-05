@@ -1,6 +1,6 @@
 %define name libgpod
-%define version 0.7.2
-%define release %mkrel 2
+%define version 0.7.90
+%define release %mkrel 1
 %define major 4
 %define libname %mklibname gpod %major
 %define libnamedev %mklibname -d gpod
@@ -10,7 +10,6 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://prdownloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
-Patch0: libgpod-0.7.2-fix-nano4g-black-8GB-serial.patch
 License: LGPLv2+
 Group: System/Libraries
 Url: http://www.gtkpod.org/
@@ -20,6 +19,9 @@ BuildRequires: hal-devel dbus-glib-devel
 BuildRequires: libsgutils-devel
 BuildRequires: taglib-devel
 BuildRequires: libxml2-devel
+BuildRequires: libsqlite3-devel
+BuildRequires: libusb1-devel
+BuildRequires: libimobiledevice-devel
 BuildRequires: gtk-doc
 BuildRequires: eject
 BuildRequires: intltool
@@ -68,9 +70,8 @@ stored on an iPod, to modify them and to save them back to the iPod.
 
 This is a Python binding for libgpod.
 
-%prep
-%setup -q
-%patch0 -p1
+%prep 
+%setup -q -n %{name}-%{version}
 
 %build
 %configure2_5x --enable-gtk-doc
@@ -95,6 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc README AUTHORS ChangeLog
 %_libdir/hal/scripts/libgpod-callout
+%_libdir/hal/scripts/iphone-callout
 %_bindir/ipod-read-sysinfo-extended
 %_datadir/hal/fdi/policy/20thirdparty/*
 
