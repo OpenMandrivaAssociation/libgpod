@@ -1,5 +1,5 @@
 %define name libgpod
-%define version 0.7.90
+%define version 0.7.91
 %define release %mkrel 1
 %define major 4
 %define libname %mklibname gpod %major
@@ -15,7 +15,7 @@ Group: System/Libraries
 Url: http://www.gtkpod.org/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: gtk+2-devel
-BuildRequires: hal-devel dbus-glib-devel
+BuildRequires: udev-devel dbus-glib-devel
 BuildRequires: libsgutils-devel
 BuildRequires: taglib-devel
 BuildRequires: libxml2-devel
@@ -74,7 +74,7 @@ This is a Python binding for libgpod.
 %setup -q -n %{name}-%{version}
 
 %build
-%configure2_5x --enable-gtk-doc
+%configure2_5x --enable-gtk-doc --without-hal --enable-udev
 %make
 
 %install
@@ -94,11 +94,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %name.lang
 %defattr(-,root,root)
-%doc README AUTHORS ChangeLog
-%_libdir/hal/scripts/libgpod-callout
-%_libdir/hal/scripts/iphone-callout
+%doc README AUTHORS ChangeLog 
 %_bindir/ipod-read-sysinfo-extended
-%_datadir/hal/fdi/policy/20thirdparty/*
+/lib/udev/iphone-set-info
+/lib/udev/ipod-set-info
+/lib/udev/rules.d/libgpod.rules
+
 
 %files -n %libname
 %defattr(-,root,root)
