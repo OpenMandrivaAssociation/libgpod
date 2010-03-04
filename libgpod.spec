@@ -94,7 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %name.lang
 %defattr(-,root,root)
-%doc README AUTHORS ChangeLog 
+%doc README* AUTHORS
 %_bindir/ipod-read-sysinfo-extended
 /lib/udev/iphone-set-info
 /lib/udev/ipod-set-info
@@ -107,6 +107,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n %libnamedev
 %defattr(-,root,root)
+%doc ChangeLog
 %_libdir/lib*.so
 %attr(644,root,root)  %_libdir/lib*a
 %_libdir/pkgconfig/*.pc
