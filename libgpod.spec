@@ -1,5 +1,5 @@
 %define name libgpod
-%define version 0.7.91
+%define version 0.7.92
 %define release %mkrel 1
 %define major 4
 %define libname %mklibname gpod %major
@@ -98,7 +98,7 @@ rm -rf $RPM_BUILD_ROOT
 %_bindir/ipod-read-sysinfo-extended
 /lib/udev/iphone-set-info
 /lib/udev/ipod-set-info
-/lib/udev/rules.d/libgpod.rules
+/lib/udev/rules.d/80-libgpod.rules
 
 
 %files -n %libname
