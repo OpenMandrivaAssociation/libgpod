@@ -35,7 +35,7 @@ stored on an iPod, to modify them and to save them back to the iPod.
 Group: System/Libraries
 Summary: Library to access an iPod audio player
 Requires: eject
-Requires: %name >= %version
+Requires: %name >= %version-release
 
 %description -n %libname
 libgpod is a library meant to abstract access to an iPod content. It
