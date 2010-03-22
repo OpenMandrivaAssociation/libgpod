@@ -1,6 +1,6 @@
 %define name libgpod
 %define version 0.7.92
-%define release %mkrel 1
+%define release %mkrel 2
 %define major 4
 %define libname %mklibname gpod %major
 %define libnamedev %mklibname -d gpod
