@@ -1,10 +1,11 @@
 %define name libgpod
-%define version 0.7.93
+%define version 0.7.94
+%define git 20100829
 %define release %mkrel 1
 %define major 4
 %define libname %mklibname gpod %major
 %define libnamedev %mklibname -d gpod
-
+%define api 1.0
 Summary: Library to access an iPod audio player
 Name: %{name}
 Version: %{version}
@@ -45,7 +46,8 @@ stored on an iPod, to modify them and to save them back to the iPod.
 %package -n %libnamedev
 Group: Development/C
 Summary: Library to access an iPod audio player
-Requires: %libname = %version
+Requires: %libname = %version-%release
+Requires: %name-sharp = %version-%release
 Provides: %name-devel = %version-%release
 Obsoletes: %mklibname -d gpod 2
 
@@ -70,8 +72,23 @@ stored on an iPod, to modify them and to save them back to the iPod.
 
 This is a Python binding for libgpod.
 
+%package sharp
+Group: Development/Other
+Summary: Mono binding to libgpod for iPod access
+BuildRequires: mono-devel
+BuildRequires: gtk-sharp2
+BuildRequires: gtk-sharp2-devel
+Requires: %libname = %version-%release
+
+%description sharp
+libgpod is a library meant to abstract access to an iPod content. It
+provides an easy to use API to retrieve the list of files and playlist
+stored on an iPod, to modify them and to save them back to the iPod.
+
+This is a Mono binding for libgpod.
+
 %prep 
-%setup -q -n %{name}-%{version}
+%setup -q -n %{name}-%version
 
 %build
 %configure2_5x --enable-gtk-doc --without-hal --enable-udev
@@ -110,12 +127,16 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog
 %_libdir/lib*.so
 %attr(644,root,root)  %_libdir/lib*a
-%_libdir/pkgconfig/*.pc
-%_includedir/gpod-1.0/
+%_libdir/pkgconfig/libgpod-%api.pc
+%_libdir/pkgconfig/libgpod-sharp.pc
+%_includedir/gpod-%api/
 %_datadir/gtk-doc/html/*
 
 %files -n python-gpod
 %defattr(-,root,root)
 %py_platsitedir/gpod/
 
-
+%files sharp
+%defattr(-,root,root)
+%dir %_libdir/%name/
+%_libdir/%name/libgpod-sharp*
