@@ -64,6 +64,7 @@ BuildRequires: python-gobject-devel
 BuildRequires: mutagen
 BuildRequires: swig
 Requires: mutagen
+Requires: %libname = %version-%release
 
 %description -n python-gpod
 libgpod is a library meant to abstract access to an iPod content. It
