@@ -1,7 +1,7 @@
 %define name libgpod
-%define version 0.7.94
+%define version 0.7.95
 %define git 20100829
-%define release %mkrel 3
+%define release %mkrel 1
 %define major 4
 %define libname %mklibname gpod %major
 %define libnamedev %mklibname -d gpod
@@ -11,7 +11,6 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://prdownloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
-Patch0: 0001-mono-fix-dll-name-in-dllmap.patch
 License: LGPLv2+
 Group: System/Libraries
 Url: http://www.gtkpod.org/
@@ -92,8 +91,6 @@ This is a Mono binding for libgpod.
 %prep 
 %setup -q -n %{name}-%version
 %apply_patches
-#gw patch0:
-automake
 
 %build
 %configure2_5x --enable-gtk-doc --without-hal --enable-udev
