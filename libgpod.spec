@@ -1,5 +1,5 @@
 %define name libgpod
-%define version 0.7.95
+%define version 0.8.0
 %define git 20100829
 %define release %mkrel 1
 %define major 4
