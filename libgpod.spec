@@ -1,11 +1,15 @@
 %define name libgpod
 %define version 0.8.0
 %define git 20100829
-%define release %mkrel 1
+%define release %mkrel 2
 %define major 4
 %define libname %mklibname gpod %major
 %define libnamedev %mklibname -d gpod
 %define api 1.0
+%define build_hal 0
+%if %mdvver < 201100
+%define build_hal 1
+%endif
 Summary: Library to access an iPod audio player
 Name: %{name}
 Version: %{version}
@@ -17,6 +21,9 @@ Url: http://www.gtkpod.org/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: gtk+2-devel
 BuildRequires: udev-devel dbus-glib-devel
+%if %build_hal 
+BuildRequires: hal-devel
+%endif
 BuildRequires: libsgutils-devel
 BuildRequires: taglib-devel
 BuildRequires: libxml2-devel
@@ -93,7 +100,11 @@ This is a Mono binding for libgpod.
 %apply_patches
 
 %build
-%configure2_5x --enable-gtk-doc --without-hal --enable-udev
+%configure2_5x --enable-gtk-doc --enable-udev \
+%if !%build_hal
+--without-hal 
+%endif
+
 %make
 
 %install
@@ -118,7 +129,10 @@ rm -rf $RPM_BUILD_ROOT
 /lib/udev/iphone-set-info
 /lib/udev/ipod-set-info
 /lib/udev/rules.d/90-libgpod.rules
-
+%if %build_hal
+%_libdir/hal/scripts/*
+%_datadir/hal/fdi/policy/20thirdparty/*
+%endif
 
 %files -n %libname
 %defattr(-,root,root)
