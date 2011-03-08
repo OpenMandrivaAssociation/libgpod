@@ -70,6 +70,7 @@ BuildRequires: python-gobject-devel
 %py_requires -d
 BuildRequires: mutagen
 BuildRequires: swig
+BuildRequires: docbook-dtd412-xml
 Requires: mutagen
 Requires: %libname = %version-%release
 
