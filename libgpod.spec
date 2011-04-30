@@ -1,7 +1,7 @@
 %define name libgpod
 %define version 0.8.0
 %define git 20100829
-%define release %mkrel 3
+%define release %mkrel 4
 %define major 4
 %define libname %mklibname gpod %major
 %define libnamedev %mklibname -d gpod
@@ -43,7 +43,7 @@ stored on an iPod, to modify them and to save them back to the iPod.
 Group: System/Libraries
 Summary: Library to access an iPod audio player
 Requires: eject
-Requires: %name >= %version-release
+Requires: %name >= %version-%release
 
 %description -n %libname
 libgpod is a library meant to abstract access to an iPod content. It
