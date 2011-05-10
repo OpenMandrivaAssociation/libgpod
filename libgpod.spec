@@ -50,7 +50,7 @@ Summary:	Library to access an iPod audio player
 Requires:	%{libname} = %{EVRD}
 Requires:	%{name}-sharp = %{EVRD}
 Provides:	%{name}-devel = %{EVRD}
-%rename		{%{mklibname -d gpod 2}}
+Obsoletes:	%{mklibname -d gpod 2}
 
 %description -n	%{devname}
 libgpod is a library meant to abstract access to an iPod content. It
