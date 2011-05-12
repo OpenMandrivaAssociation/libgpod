@@ -6,7 +6,7 @@
 Summary:	Library to access an iPod audio player
 Name:		libgpod
 Version:	0.8.0
-Release:	5
+Release:	6
 Source0:	http://prdownloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.gz
 License:	LGPLv2+
 Group:		System/Libraries
@@ -37,6 +37,8 @@ stored on an iPod, to modify them and to save them back to the iPod.
 Group:		System/Libraries
 Summary:	Library to access an iPod audio player
 Requires:	eject
+#gw this is needed to have the udev script started after connecting an ipod
+Requires:	%name >= %version
 
 %description -n	%{libname}
 libgpod is a library meant to abstract access to an iPod content. It
