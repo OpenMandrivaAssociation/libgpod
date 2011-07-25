@@ -116,7 +116,7 @@ rm -rf $RPM_BUILD_ROOT %name.lang
 /lib/udev/rules.d/90-libgpod.rules
 %if %{build_hal}
 # %{_libdir}/hal/scripts/*
-%{_datadir}/hal/fdi/policy/20thirdparty/*
+# %{_datadir}/hal/fdi/policy/20thirdparty/*
 %endif
 
 %files -n %{libname}
