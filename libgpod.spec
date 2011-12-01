@@ -104,7 +104,7 @@ This is a Mono binding for libgpod.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT %name.lang
+rm -rf %{buildroot} %name.lang
 %makeinstall_std
 %find_lang %{name}
 
