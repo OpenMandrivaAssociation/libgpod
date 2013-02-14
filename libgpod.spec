@@ -2,6 +2,7 @@
 %define	major	4
 %define libname %{mklibname gpod %{major}}
 %define	devname	%mklibname -d gpod
+%define _disable_ld_no_undefined 1
 
 Summary:	Library to access an iPod audio player
 Name:		libgpod
