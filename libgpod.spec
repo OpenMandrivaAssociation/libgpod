@@ -2,7 +2,6 @@
 %define	major	4
 %define libname %{mklibname gpod %{major}}
 %define	devname	%mklibname -d gpod
-%define _disable_ld_no_undefined 1
 
 Summary:	Library to access an iPod audio player
 Name:		libgpod
@@ -91,12 +90,13 @@ This is a Mono binding for libgpod.
 %apply_patches
 
 %build
+export LIBS='-lpython2.7'
 %configure2_5x \
 	--disable-static \
 	--enable-udev \
 	--without-hal 
 
-%make LIBS='-lm -lpython2.7 -lz -lxml2 -lglib-2.0 -lgobject-2.0 -lgmodule-2.0 -lgdk_pixbuf-2.0 -lsqlite3 -lplist -limobiledevice'
+%make 
 
 %install
 %makeinstall_std
