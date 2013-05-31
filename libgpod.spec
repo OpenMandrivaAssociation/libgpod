@@ -1,6 +1,6 @@
 %define	api	1.0
 %define	major	4
-%define libname %{mklibname gpod %{major}}
+%define libname %mklibname gpod %{major}
 %define	devname	%mklibname -d gpod
 
 Summary:	Library to access an iPod audio player
@@ -34,7 +34,7 @@ Group:		System/Libraries
 Summary:	Library to access an iPod audio player
 Requires:	eject
 #gw this is needed to have the udev script started after connecting an ipod
-Requires:	%name >= %version
+Requires:	%{name} >= %{EVRD}
 
 %description -n	%{libname}
 libgpod is a library meant to abstract access to an iPod content. It
@@ -56,11 +56,11 @@ stored on an iPod, to modify them and to save them back to the iPod.
 %package -n	python-gpod
 Group:		Development/Python
 Summary:	Python module for iPod access
-BuildRequires:	python-gobject-devel
-BuildRequires:	python-devel
+BuildRequires:	docbook-dtd412-xml
 BuildRequires:	mutagen
 BuildRequires:	swig
-BuildRequires:	docbook-dtd412-xml
+BuildRequires:	pkgconfig(pygobject-2.0)
+BuildRequires:	pkgconfig(python)
 Requires:	mutagen
 
 %description -n	python-gpod
@@ -73,9 +73,9 @@ This is a Python binding for libgpod.
 %package	sharp
 Group:		Development/Other
 Summary:	Mono binding to libgpod for iPod access
-BuildRequires:	mono-devel
-BuildRequires:	gtk-sharp2
-BuildRequires:	gtk-sharp2-devel
+BuildRequires:	pkgconfig(gapi-2.0)
+BuildRequires:	pkgconfig(gtk-sharp-2.0)
+BuildRequires:	pkgconfig(mono)
 Requires:	%{libname} = %{EVRD}
 
 %description	sharp
