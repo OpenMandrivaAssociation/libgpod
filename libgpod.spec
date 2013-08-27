@@ -48,7 +48,9 @@ stored on an iPod, to modify them and to save them back to the iPod.
 Group:		Development/C
 Summary:	Library to access an iPod audio player
 Requires:	%{libname} = %{EVRD}
+%if %{with sharp}
 Requires:	%{name}-sharp = %{EVRD}
+%endif
 Provides:	%{name}-devel = %{EVRD}
 
 %description -n	%{devname}
