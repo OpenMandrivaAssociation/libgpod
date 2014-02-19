@@ -3,10 +3,13 @@
 %define libname %mklibname gpod %{major}
 %define	devname	%mklibname -d gpod
 
+%bcond_with	sharp
+
+
 Summary:	Library to access an iPod audio player
 Name:		libgpod
 Version:	0.8.2
-Release:	6
+Release:	10
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gtkpod.org/
@@ -45,7 +48,9 @@ stored on an iPod, to modify them and to save them back to the iPod.
 Group:		Development/C
 Summary:	Library to access an iPod audio player
 Requires:	%{libname} = %{EVRD}
+%if %{with sharp}
 Requires:	%{name}-sharp = %{EVRD}
+%endif
 Provides:	%{name}-devel = %{EVRD}
 
 %description -n	%{devname}
@@ -69,7 +74,7 @@ provides an easy to use API to retrieve the list of files and playlist
 stored on an iPod, to modify them and to save them back to the iPod.
 
 This is a Python binding for libgpod.
-
+%if %{with sharp}
 %package	sharp
 Group:		Development/Other
 Summary:	Mono binding to libgpod for iPod access
@@ -84,6 +89,7 @@ provides an easy to use API to retrieve the list of files and playlist
 stored on an iPod, to modify them and to save them back to the iPod.
 
 This is a Mono binding for libgpod.
+%endif
 
 %prep 
 %setup -q
@@ -123,7 +129,9 @@ export LIBS='-lpython2.7'
 %files -n python-gpod
 %{py_platsitedir}/gpod/
 
+%if %{with sharp}
 %files sharp
 %dir %{_libdir}/%{name}/
 %{_libdir}/%{name}/libgpod-sharp*
+%endif
 
