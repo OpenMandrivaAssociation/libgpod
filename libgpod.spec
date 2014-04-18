@@ -2,18 +2,24 @@
 %define	major	4
 %define libname %mklibname gpod %{major}
 %define	devname	%mklibname -d gpod
+%define	snapshot 180414
 
 %bcond_with	sharp
 
 
 Summary:	Library to access an iPod audio player
 Name:		libgpod
-Version:	0.8.2
+Version:	0.8.3
+%if		%snapshot
+Release:	0.180414.1
+Source0:	%name-%{snapshot}.tar.xz
+%else
 Release:	11
+%endif
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gtkpod.org/
-Source0:	http://prdownloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.bz2
+Source1:	http://prdownloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.bz2
 
 BuildRequires:	eject
 BuildRequires:	intltool
