@@ -1,12 +1,11 @@
-diff -Nru a/libgpod-0.8.3/tools/ipod-lockdown.c b/libgpod-0.8.0.3/tools/ipod-lockdown.c
---- a/libgpod-0/tools/ipod-lockdown.c	2014-04-18 09:34:12.000000000 +0100
-+++ b/libgpod-0.8.3/tools/ipod-lockdown.c	2014-04-18 09:32:45.930660227 +0100
+--- libgpod-0.8.3.orig/tools/ipod-lockdown.c	2014-04-18 09:32:45.000000000 +0100
++++ libgpod-0.8.3/tools/ipod-lockdown.c	2014-04-18 20:39:00.191660344 +0100
 @@ -100,7 +100,7 @@
  	plist_get_string_val(ptr, &str);
  	if (str != NULL) {
  	    ptr = plist_new_string(str);
--	    plist_dict_set_item(value, "SerialNumber", ptr);
-+	    plist_dict_insert_item(value, "SerialNumber", ptr);
+-	    plist_dict_insert_item(value, "SerialNumber", ptr);
++	    plist_dict_set_item(value, "SerialNumber", ptr);
  	    free(str);
  	}
  
@@ -14,18 +13,18 @@ diff -Nru a/libgpod-0.8.3/tools/ipod-lockdown.c b/libgpod-0.8.0.3/tools/ipod-loc
  	plist_get_string_val(ptr, &str);
  	if (str != NULL) {
  	    ptr = plist_new_string(str);
--	    plist_dict_set_item(value, "VisibleBuildID", ptr);
-+	    plist_dict_insert_item(value, "VisibleBuildID", ptr);
+-	    plist_dict_insert_item(value, "VisibleBuildID", ptr);
++	    plist_dict_set_item(value, "VisibleBuildID", ptr);
  	    free(str);
  	}
  
  	ptr = plist_new_string(uuid);
--	plist_dict_set_item(value, "FireWireGUID", ptr);
-+	plist_dict_insert_item(value, "FireWireGUID", ptr);
+-	plist_dict_insert_item(value, "FireWireGUID", ptr);
++	plist_dict_set_item(value, "FireWireGUID", ptr);
  
  	ptr = plist_new_string(uuid);
--	plist_dict_set_item(value, "UniqueDeviceID", ptr);
-+	plist_dict_insert_item(value, "UniqueDeviceID", ptr);
+-	plist_dict_insert_item(value, "UniqueDeviceID", ptr);
++	plist_dict_set_item(value, "UniqueDeviceID", ptr);
  
  	plist_to_xml(value, &xml, &xml_length);
  
