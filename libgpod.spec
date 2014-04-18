@@ -103,10 +103,20 @@ This is a Mono binding for libgpod.
 
 %build
 export LIBS='-lpython2.7'
+
+%if %snapshot
+./autogen.sh
+
 %configure2_5x \
 	--disable-static \
 	--enable-udev \
 	--without-hal 
+%else
+%configure2_5x \
+	--disable-static \
+	--enable-udev \
+	--without-hal 
+%endif
 
 %make 
 
