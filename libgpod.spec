@@ -2,7 +2,7 @@
 %define	major	4
 %define libname %mklibname gpod %{major}
 %define	devname	%mklibname -d gpod
-%define	snapshot 180414
+%define	snapshot 140418
 
 %bcond_with	sharp
 
@@ -11,10 +11,10 @@ Summary:	Library to access an iPod audio player
 Name:		libgpod
 Version:	0.8.3
 %if %snapshot
-Release:	0.180414.1
+Release:	0.%{snapshot}.1
 Source0:	%name-%{snapshot}.tar.xz
 %else
-Release:	11
+Release:	1
 Source0:	http://prdownloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.bz2
 %endif
 License:	LGPLv2+
@@ -102,23 +102,22 @@ This is a Mono binding for libgpod.
 %prep 
 %setup -q
 %apply_patches
+# Fix bogus reference
+sed -i -e 's,docs/reference/xml,docs/reference,g' bindings/python/Makefile.am
 
 %build
 export LIBS='-lpython2.7'
 
 %if %snapshot
 ./autogen.sh
+%endif
 
 %configure \
 	--disable-static \
+	--disable-more-warnings \
 	--enable-udev \
-	--without-hal 
-%else
-%configure2_5x \
-	--disable-static \
-	--enable-udev \
-	--without-hal 
-%endif
+	--without-hal \
+	--enable-gtk-doc
 
 %make 
 

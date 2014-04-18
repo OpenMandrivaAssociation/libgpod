@@ -1,4 +1,2 @@
-removed_sources:
-  libgpod-0.8.2.tar.bz2: f9ba70cd6f00ae59cdc6a43cc72c409a4d27606e
 sources:
-  libgpod-180414.tar.xz: 62ddd5454dd8fc06fd3a55bde7b4d9763689ada0
+  libgpod-140418.tar.xz: 62ddd5454dd8fc06fd3a55bde7b4d9763689ada0
