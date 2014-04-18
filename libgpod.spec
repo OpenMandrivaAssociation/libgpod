@@ -10,16 +10,16 @@
 Summary:	Library to access an iPod audio player
 Name:		libgpod
 Version:	0.8.3
-%if		%snapshot
+%if %snapshot
 Release:	0.180414.1
 Source0:	%name-%{snapshot}.tar.xz
 %else
 Release:	11
+Source0:	http://prdownloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.bz2
 %endif
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gtkpod.org/
-Source1:	http://prdownloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.bz2
 
 BuildRequires:	eject
 BuildRequires:	intltool
