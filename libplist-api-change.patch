@@ -1,29 +1,6 @@
-Binary files /home/colin/gtkpod-libgpod/.git/index and /home/colin/Development/gtkpod-libgpod/.git/index differ
-diff -Nru /home/colin/gtkpod-libgpod/.git/logs/HEAD /home/colin/Development/gtkpod-libgpod/.git/logs/HEAD
---- /home/colin/gtkpod-libgpod/.git/logs/HEAD	2014-04-18 09:34:50.758493937 +0100
-+++ /home/colin/Development/gtkpod-libgpod/.git/logs/HEAD	2014-04-18 09:32:45.899659524 +0100
-@@ -1 +1 @@
--0000000000000000000000000000000000000000 8b85cadf2d9e9d26ce6e52336177beb8d1472458 colin <colin@localhost.localdomain> 1397810090 +0100	clone: from git://git.code.sf.net/p/gtkpod/libgpod
-+0000000000000000000000000000000000000000 8b85cadf2d9e9d26ce6e52336177beb8d1472458 colin <colin@localhost.localdomain> 1397809965 +0100	clone: from git://git.code.sf.net/p/gtkpod/libgpod
-diff -Nru /home/colin/gtkpod-libgpod/.git/logs/refs/heads/master /home/colin/Development/gtkpod-libgpod/.git/logs/refs/heads/master
---- /home/colin/gtkpod-libgpod/.git/logs/refs/heads/master	2014-04-18 09:34:50.758493937 +0100
-+++ /home/colin/Development/gtkpod-libgpod/.git/logs/refs/heads/master	2014-04-18 09:32:45.899659524 +0100
-@@ -1 +1 @@
--0000000000000000000000000000000000000000 8b85cadf2d9e9d26ce6e52336177beb8d1472458 colin <colin@localhost.localdomain> 1397810090 +0100	clone: from git://git.code.sf.net/p/gtkpod/libgpod
-+0000000000000000000000000000000000000000 8b85cadf2d9e9d26ce6e52336177beb8d1472458 colin <colin@localhost.localdomain> 1397809965 +0100	clone: from git://git.code.sf.net/p/gtkpod/libgpod
-diff -Nru /home/colin/gtkpod-libgpod/.git/logs/refs/remotes/origin/HEAD /home/colin/Development/gtkpod-libgpod/.git/logs/refs/remotes/origin/HEAD
---- /home/colin/gtkpod-libgpod/.git/logs/refs/remotes/origin/HEAD	2014-04-18 09:34:50.758493937 +0100
-+++ /home/colin/Development/gtkpod-libgpod/.git/logs/refs/remotes/origin/HEAD	2014-04-18 09:32:45.898659501 +0100
-@@ -1 +1 @@
--0000000000000000000000000000000000000000 8b85cadf2d9e9d26ce6e52336177beb8d1472458 colin <colin@localhost.localdomain> 1397810090 +0100	clone: from git://git.code.sf.net/p/gtkpod/libgpod
-+0000000000000000000000000000000000000000 8b85cadf2d9e9d26ce6e52336177beb8d1472458 colin <colin@localhost.localdomain> 1397809965 +0100	clone: from git://git.code.sf.net/p/gtkpod/libgpod
-Binary files /home/colin/gtkpod-libgpod/.git/objects/pack/pack-3891c60815780e6d6ef48b41c7978cf1619aabc9.idx and /home/colin/Development/gtkpod-libgpod/.git/objects/pack/pack-3891c60815780e6d6ef48b41c7978cf1619aabc9.idx differ
-Binary files /home/colin/gtkpod-libgpod/.git/objects/pack/pack-3891c60815780e6d6ef48b41c7978cf1619aabc9.pack and /home/colin/Development/gtkpod-libgpod/.git/objects/pack/pack-3891c60815780e6d6ef48b41c7978cf1619aabc9.pack differ
-Binary files /home/colin/gtkpod-libgpod/.git/objects/pack/pack-bd186945d0050ed8374ded62728f91ee7ba51095.idx and /home/colin/Development/gtkpod-libgpod/.git/objects/pack/pack-bd186945d0050ed8374ded62728f91ee7ba51095.idx differ
-Binary files /home/colin/gtkpod-libgpod/.git/objects/pack/pack-bd186945d0050ed8374ded62728f91ee7ba51095.pack and /home/colin/Development/gtkpod-libgpod/.git/objects/pack/pack-bd186945d0050ed8374ded62728f91ee7ba51095.pack differ
-diff -Nru /home/colin/gtkpod-libgpod/tools/ipod-lockdown.c /home/colin/Development/gtkpod-libgpod/tools/ipod-lockdown.c
---- /home/colin/gtkpod-libgpod/tools/ipod-lockdown.c	2014-04-18 09:34:12.000000000 +0100
-+++ /home/colin/Development/gtkpod-libgpod/tools/ipod-lockdown.c	2014-04-18 09:32:45.930660227 +0100
+diff -Nru a/libgpod-0.8.3/tools/ipod-lockdown.c b/libgpod-0.8.0.3/tools/ipod-lockdown.c
+--- a/libgpod-0/tools/ipod-lockdown.c	2014-04-18 09:34:12.000000000 +0100
++++ b/libgpod-0.8.3/tools/ipod-lockdown.c	2014-04-18 09:32:45.930660227 +0100
 @@ -100,7 +100,7 @@
  	plist_get_string_val(ptr, &str);
  	if (str != NULL) {
