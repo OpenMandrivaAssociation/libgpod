@@ -20,6 +20,7 @@ Source0:	http://prdownloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.bz2
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gtkpod.org/
+Patch0:		libplist-api-change.patch
 
 BuildRequires:	eject
 BuildRequires:	intltool
@@ -108,7 +109,7 @@ export LIBS='-lpython2.7'
 %if %snapshot
 ./autogen.sh
 
-%configure2_5x \
+%configure \
 	--disable-static \
 	--enable-udev \
 	--without-hal 
