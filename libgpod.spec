@@ -21,7 +21,6 @@ License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gtkpod.org/
 Patch0:		libplist-api-change.patch
-Patch1:		libgpod-python3.patch
 BuildRequires:	eject
 BuildRequires:	intltool
 BuildRequires:	sg3_utils-devel
