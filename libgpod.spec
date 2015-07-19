@@ -14,7 +14,7 @@ Version:	0.8.3
 Release:	0.%{snapshot}.5
 Source0:	%name-%{snapshot}.tar.xz
 %else
-Release:	4
+Release:	5
 Source0:	http://prdownloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.bz2
 %endif
 License:	LGPLv2+
