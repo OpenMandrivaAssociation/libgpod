@@ -2,7 +2,7 @@
 %define	major	4
 %define libname %mklibname gpod %{major}
 %define	devname	%mklibname -d gpod
-%define	snapshot 140418
+%define	snapshot 0
 
 %bcond_with	sharp
 
@@ -21,6 +21,7 @@ License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gtkpod.org/
 Patch0:		libplist-api-change.patch
+Patch1:		libgpod-0.8.3-fix-segfault-and-some-typos.patch
 
 BuildRequires:	eject
 BuildRequires:	intltool
