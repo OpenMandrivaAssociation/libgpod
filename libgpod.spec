@@ -2,7 +2,7 @@
 %define	major	4
 %define libname %mklibname gpod %{major}
 %define	devname	%mklibname -d gpod
-%define	snapshot 140418
+%define	snapshot 0
 
 %bcond_with	sharp
 %bcond_with	python
@@ -14,13 +14,14 @@ Version:	0.8.3
 Release:	0.%{snapshot}.5
 Source0:	%name-%{snapshot}.tar.xz
 %else
-Release:	5
+Release:	1
 Source0:	http://prdownloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.bz2
 %endif
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gtkpod.org/
 Patch0:		libplist-api-change.patch
+Patch1:		libgpod-0.8.3-fix-segfault-and-some-typos.patch
 BuildRequires:	eject
 BuildRequires:	intltool
 BuildRequires:	sg3_utils-devel
