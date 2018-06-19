@@ -14,7 +14,7 @@ Version:	0.8.3
 Release:	0.%{snapshot}.5
 Source0:	%name-%{snapshot}.tar.xz
 %else
-Release:	1
+Release:	2
 Source0:	http://prdownloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.bz2
 %endif
 License:	LGPLv2+
@@ -105,6 +105,7 @@ This is a Mono binding for libgpod.
 %prep 
 %setup -q
 %apply_patches
+autoreconf -fi
 # Fix bogus reference
 sed -i -e 's,docs/reference/xml,docs/reference,g' bindings/python/Makefile.am
 
