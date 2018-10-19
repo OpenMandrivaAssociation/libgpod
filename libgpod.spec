@@ -34,6 +34,7 @@ BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(taglib)
 BuildRequires:	pkgconfig(udev)
 BuildRequires:	gtk-doc
+BuildRequires:	gtk-doc-mkpdf
 
 %description
 libgpod is a library meant to abstract access to an iPod content. It
