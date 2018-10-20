@@ -119,7 +119,7 @@ NOCONFIGURE=1 ./autogen.sh
 	--disable-more-warnings \
 	--enable-udev \
 	--without-hal \
-	--enable-gtk-doc \
+	--disable-gtk-doc \
 	--without-mono \
 	--without-python
 
