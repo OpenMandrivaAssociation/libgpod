@@ -118,8 +118,8 @@ NOCONFIGURE=1 ./autogen.sh
 	--enable-udev \
 	--without-hal \
 	--disable-gtk-doc \
-	--enable-gtk-doc-html \
-	--enable-gtk-doc-pdf \
+	--disable-gtk-doc-html \
+	--disable-gtk-doc-pdf \
 	--without-mono \
 	--without-python
 
