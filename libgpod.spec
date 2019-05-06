@@ -149,6 +149,7 @@ rm -rf %{buildroot}%{_libdir}/pkgconfig/libgpod-sharp.pc
 %{_libdir}/libgpod.so
 %{_libdir}/pkgconfig/libgpod-%{api}.pc
 %{_includedir}/gpod-%{api}/
+%doc %{_datadir}/gtk-doc/html/%{name}
 
 %if %{with python}
 %files -n python-gpod
