@@ -127,6 +127,11 @@ NOCONFIGURE=1 ./autogen.sh
 
 %install
 %make_install
+
+%if !%{with sharp}
+rm -rf %{buildroot}%{_libdir}/pkgconfig/libgpod-sharp.pc
+%endif
+
 %find_lang %{name}
 
 %files -f %{name}.lang
