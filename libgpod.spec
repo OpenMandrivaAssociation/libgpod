@@ -33,8 +33,6 @@ BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(taglib)
 BuildRequires:	pkgconfig(udev)
-BuildRequires:	gtk-doc
-BuildRequires:	gtk-doc-mkpdf
 
 %description
 libgpod is a library meant to abstract access to an iPod content. It
@@ -120,6 +118,8 @@ NOCONFIGURE=1 ./autogen.sh
 	--enable-udev \
 	--without-hal \
 	--disable-gtk-doc \
+	--enable-gtk-doc-html \
+	--enable-gtk-doc-pdf \
 	--without-mono \
 	--without-python
 
@@ -149,7 +149,6 @@ rm -rf %{buildroot}%{_libdir}/pkgconfig/libgpod-sharp.pc
 %{_libdir}/libgpod.so
 %{_libdir}/pkgconfig/libgpod-%{api}.pc
 %{_includedir}/gpod-%{api}/
-%{_datadir}/gtk-doc/html/*
 
 %if %{with python}
 %files -n python-gpod
