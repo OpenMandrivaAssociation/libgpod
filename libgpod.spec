@@ -143,7 +143,6 @@ NOCONFIGURE=1 ./autogen.sh
 %doc ChangeLog
 %{_libdir}/libgpod.so
 %{_libdir}/pkgconfig/libgpod-%{api}.pc
-%{_libdir}/pkgconfig/libgpod-sharp.pc
 %{_includedir}/gpod-%{api}/
 %{_datadir}/gtk-doc/html/*
 
@@ -156,4 +155,5 @@ NOCONFIGURE=1 ./autogen.sh
 %files sharp
 %dir %{_libdir}/%{name}/
 %{_libdir}/%{name}/libgpod-sharp*
+%{_libdir}/pkgconfig/libgpod-sharp.pc
 %endif
