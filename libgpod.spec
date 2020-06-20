@@ -14,7 +14,7 @@ Version:	0.8.3
 Release:	0.%{snapshot}.5
 Source0:	%name-%{snapshot}.tar.xz
 %else
-Release:	8
+Release:	9
 Source0:	http://prdownloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.bz2
 %endif
 License:	LGPLv2+
@@ -22,6 +22,8 @@ Group:		System/Libraries
 Url:		http://www.gtkpod.org/
 Patch0:		libplist-api-change.patch
 Patch1:		libgpod-0.8.3-fix-segfault-and-some-typos.patch
+Patch2:         0001-configure.ac-Add-support-for-libplist-2.2.patch
+
 BuildRequires:	eject
 BuildRequires:	intltool
 BuildRequires:	sg3_utils-devel
@@ -29,6 +31,7 @@ BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(libimobiledevice-1.0)
 BuildRequires:	pkgconfig(libusb-1.0)
+BuildRequires:  pkgconfig(libplist-2.0) >= 2.2.0
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(taglib)
