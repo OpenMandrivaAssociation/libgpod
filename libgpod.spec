@@ -11,10 +11,10 @@ Summary:	Library to access an iPod audio player
 Name:		libgpod
 Version:	0.8.3
 %if %snapshot
-Release:	0.%{snapshot}.5
+Release:	0.%{snapshot}.1
 Source0:	%name-%{snapshot}.tar.xz
 %else
-Release:	13
+Release:	14
 Source0:	http://prdownloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.bz2
 %endif
 License:	LGPLv2+
@@ -23,6 +23,7 @@ Url:		http://www.gtkpod.org/
 Patch0:		libplist-api-change.patch
 Patch1:		libgpod-0.8.3-fix-segfault-and-some-typos.patch
 Patch2:         0001-configure.ac-Add-support-for-libplist-2.2.patch
+Patch3:		libgpod-0.8.3-compile.patch
 
 BuildRequires:	eject
 BuildRequires:	intltool
