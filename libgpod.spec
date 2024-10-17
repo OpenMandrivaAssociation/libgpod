@@ -19,7 +19,7 @@ Source0:	http://prdownloads.sourceforge.net/gtkpod/%{name}-%{version}.tar.bz2
 %endif
 License:	LGPLv2+
 Group:		System/Libraries
-Url:		http://www.gtkpod.org/
+Url:		https://www.gtkpod.org/
 Patch0:		libplist-api-change.patch
 Patch1:		libgpod-0.8.3-fix-segfault-and-some-typos.patch
 Patch2:         0001-configure.ac-Add-support-for-libplist-2.2.patch
