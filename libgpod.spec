@@ -25,6 +25,11 @@ Patch1:		libgpod-0.8.3-fix-segfault-and-some-typos.patch
 Patch2:         0001-configure.ac-Add-support-for-libplist-2.2.patch
 Patch3:		libgpod-0.8.3-compile.patch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	eject
 BuildRequires:	intltool
 BuildRequires:	sg3_utils-devel
