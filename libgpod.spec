@@ -116,6 +116,22 @@ This is a Mono binding for libgpod.
 %prep
 %autosetup -p1
 
+# The buildroot iconv has no EUC-JP, so msgfmt cannot read ja.po.
+python - << 'PY'
+import pathlib, re
+for path in pathlib.Path("po").glob("*.po"):
+    data = path.read_bytes()
+    m = re.search(br'charset=([^"\s\\]+)', data)
+    if not m:
+        continue
+    charset = m.group(1).decode("ascii", "replace")
+    if charset.lower().replace("-", "") in ("utf8", "ascii", "usascii"):
+        continue
+    text = data.decode(charset)
+    text = text.replace("charset=" + charset, "charset=UTF-8", 1)
+    path.write_bytes(text.encode("utf-8"))
+PY
+
 autoreconf -fi
 # Fix bogus reference
 sed -i -e 's,docs/reference/xml,docs/reference,g' bindings/python/Makefile.am
