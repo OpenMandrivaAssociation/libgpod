@@ -7,6 +7,8 @@
 %bcond_with	sharp
 %bcond_with	python
 
+%global optflags %{optflags} -Wno-incompatible-pointer-types
+
 Summary:	Library to access an iPod audio player
 Name:		libgpod
 Version:	0.8.3
